@@ -1,3 +1,3 @@
 macro_rules! inline_all{($($fn:item)*)=>{$(#[inline(always)]$fn)*};}
-pub trait Pipey<T> where Self:Sized{inline_all!{fn tap(self,f: impl Fn(&Self)) -> Self{f(&self);self} fn tap_mut(mut self,f: impl Fn(&mut Self)) -> Self{f(&mut self);self}fn pipe(self, f: impl Fn(Self) -> T) -> T{f(self)} fn pipe_ref(&self,f: impl Fn(&Self) -> T) -> T{f(self)} fn pipe_mut(&mut self,f: impl Fn(&mut Self) -> T) -> T{f(self)}}}
+pub trait Pipey<T> where Self:Sized{inline_all!{fn tap(self,f: impl FnOnce(&Self)) -> Self{f(&self);self} fn tap_mut(mut self,f: impl FnOnce(&mut Self)) -> Self{f(&mut self);self}fn pipe(self, f: impl FnOnce(Self) -> T) -> T{f(self)} fn pipe_ref(&self,f: impl FnOnce(&Self) -> T) -> T{f(self)} fn pipe_mut(&mut self,f: impl FnOnce(&mut Self) -> T) -> T{f(self)}}}
 impl<X,T> Pipey<X> for T{} // this fixes bounds
