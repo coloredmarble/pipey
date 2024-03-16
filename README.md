@@ -6,7 +6,7 @@ made this because i am bored as fuck
 ```
 tap = access the value temporarily. and return it
 pipe = access value and return whatever
-poof = like "pipe". but this marks the fact that this will return nothing. this allows chaining multiple statements
+poof = like "pipe". marks the fact that the value will be dropped (all returns are ignored). this allows chaining multiple statements
 ```
 
 usage:
