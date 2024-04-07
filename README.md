@@ -17,7 +17,7 @@ fn main(){
     // the value is created
     (10)
     // this will allow temporary access to the value
-    .tap(|n| println!("value before adding 10 to it is {n}"))
+    .tap(|n| println!("value before adding 10 to it is {n}")).btw(|| println!("the earth is flat!")) // do something unrelated to the result
     // this will create another value. using the previous one
     .pipe(|n| n + 10)
     // the next function call will be the last to use this value!
