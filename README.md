@@ -7,6 +7,7 @@ made this because i am bored as fuck
 tap = access the value temporarily. and return it
 pipe = access value and return whatever
 poof = like "pipe". marks the fact that the value will be dropped (all returns are ignored). this allows chaining multiple statements
+btw = wawa
 ```
 
 usage:
@@ -17,7 +18,8 @@ fn main(){
     // the value is created
     (10)
     // this will allow temporary access to the value
-    .tap(|n| println!("value before adding 10 to it is {n}")).btw(|| println!("the earth is flat!")) // do something unrelated to the result
+    .tap(|n| println!("value before adding 10 to it is {n}"))
+    .btw(|| println!("im gay")) // uhhhhh do something unrelated
     // this will create another value. using the previous one
     .pipe(|n| n + 10)
     // the next function call will be the last to use this value!
